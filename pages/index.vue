@@ -1,46 +1,50 @@
 <template>
-  <h1>Testing color mode</h1>
+  <div class="container">
+    <p><NuxtLogo /></p>
+    <ColorModePicker />
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import NuxtLogo from '@/components/NuxtLogo'
+import ColorModePicker from '@/components/ColorModePicker'
 
 export default {
   components: {
-    Logo
+    NuxtLogo,
+    ColorModePicker
+  },
+  head: {
+    title: 'Demo of @nuxtjs/color-mode',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Demo of using @nuxtjs/color-mode for NuxtJS, supporting dark mode and custom colors'
+      }
+    ]
   }
 }
 </script>
 
-<style>
+<style scoped>
+p {
+  padding: 20px 0;
+  margin: 0;
+}
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  padding: 50px;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.note {
+  transition: all 0.3s;
+  display: inline-block;
+  padding: 15px 15px;
+  border-radius: 5px;
+  background-color: var(--bg-secondary);
+  color: var(--color-secondary);
 }
 </style>
